@@ -14,7 +14,7 @@ spec:
     node(POD_LABEL) {
       stage('k8s')
       {
-        git 'https://github.com/sportstube28/week9.git'
+        git url: 'https://github.com/sportstube28/week9.git', branch: 'main'
         container('centos') {
           stage('Deploy')
             {
