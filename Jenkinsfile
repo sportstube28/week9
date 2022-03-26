@@ -28,7 +28,7 @@ spec:
           stage('Tesing Using the Curl')
             {
             sh 'test $(curl calculator-service.staging.svc.cluster.local:8080/sum?a=1\\&b=2) -eq 3'
-            sh 'test $(curl calculator-service.staging.svc.cluster.local:8080/div?a=1\\&b=1) -eq 1'
+            sh 'test $(curl calculator-service.staging.svc.cluster.local:8080/div?a=1\\&b=1)'
           }
         }
       }
