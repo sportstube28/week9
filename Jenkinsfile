@@ -23,8 +23,14 @@ spec:
                 chmod +x ./kubectl
                 ./kubectl apply -f calculator.yaml -n staging
                 ./kubectl apply -f hazelcast.yaml -n staging
-                ''' }
+                '''
+              }
+          stage('Tesing Using the Curl')
+            {
+            sh 'test $(curl calculator-service.staging.svc.cluster.local:8080/sum?a=1\\&b=2) -eq 3'
+            sh 'test $(curl calculator-servicestaging.svc.cluster.local:8080/div?a=1\\&b=1)'
           }
+        }
       }
     }
   }
