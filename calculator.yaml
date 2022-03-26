@@ -5,6 +5,7 @@ metadata:
   namespace: staging
   labels:
     app: calculator
+    namespace: staging
 spec:
   replicas: 2
   strategy:
